@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sca:composite xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:BW="http://xsd.tns.tibco.com/amf/models/sca/implementationtype/BW" xmlns:XMLSchema="http://www.w3.org/2001/XMLSchema" xmlns:compositeext="http://schemas.tibco.com/amx/3.0/compositeext" xmlns:rest="http://xsd.tns.tibco.com/bw/models/binding/rest" xmlns:sca="http://www.osoa.org/xmlns/sca/1.0" xmlns:scact="http://xsd.tns.tibco.com/amf/models/sca/componentType" xmlns:scaext="http://xsd.tns.tibco.com/amf/models/sca/extensions" xmi:id="_TCRzID8OEemSJu2nzjApkg" targetNamespace="http://tns.tibco.com/bw/composite/JenkinREST.module" name="JenkinREST.module" compositeext:version="1.0.0" compositeext:formatVersion="2">
+  <sca:service xmi:id="_2otgED8OEemSJu2nzjApkg" name="user" promote="ComponentProcess/user">
+    <sca:interface.wsdl xmi:id="_2o2qAD8OEemSJu2nzjApkg" interface="http://xmlns.example.com/20190305114706PLT#wsdl.interface(user)" scaext:wsdlLocation="../Processes/jenkinrest/module/Process.bwp"/>
+    <scaext:binding xsi:type="rest:RestServiceBinding" xmi:id="_2pDeUD8OEemSJu2nzjApkg" name="RestService" path="/user" docBasePath="http://localhost:7777/JenkinREST.module" docResourcePath="User" basePath="/" connector="jenkinrest.module.User" structuredData="true" technologyVersion="2.0" implementation="Service Descriptors/jenkinrest.module.Process-User.json">
+      <operation xmi:id="_2pKzED8OEemSJu2nzjApkg" operationName="get" nickname="get-user" httpMethod="GET" responseStyle="element">
+        <clientFormat>json</clientFormat>
+        <clientRequestFormat>json</clientRequestFormat>
+      </operation>
+      <parameters xmi:id="_2psXgD8OEemSJu2nzjApkg"/>
+      <advancedConfig xmi:id="_2pDeUT8OEemSJu2nzjApkg" blockingQueueSize="2147483647"/>
+    </scaext:binding>
+    <scact:bindingAdjunct xmi:id="_2pKzET8OEemSJu2nzjApkg" bindingName="RestService"/>
+  </sca:service>
+  <sca:property xmi:id="_VUDBcD8OEemSJu2nzjApkg" name="BW.APPNODE.NAME" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_VURD4D8OEemSJu2nzjApkg" name="BW.DEPLOYMENTUNIT.NAME" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_VUYYoD8OEemSJu2nzjApkg" name="BW.HOST.NAME" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_VUd4MD8OEemSJu2nzjApkg" name="BW.DEPLOYMENTUNIT.VERSION" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_VUjXwD8OEemSJu2nzjApkg" name="BW.MODULE.VERSION" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_VUqsgD8OEemSJu2nzjApkg" name="BW.CLOUD.PORT" type="XMLSchema:int" scalable="true"/>
+  <sca:property xmi:id="_VUwzID8OEemSJu2nzjApkg" name="BW.MODULE.NAME" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_Ju4fsD8PEemSJu2nzjApkg" name="User" type="XMLSchema:string" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_audmQD8PEemSJu2nzjApkg" name="Region" type="XMLSchema:string" publicAccess="true" scalable="true"/>
+  <sca:component xmi:id="_TRCA0D8OEemSJu2nzjApkg" name="ComponentProcess" compositeext:version="1.0.0.qualifier">
+    <scaext:implementation xsi:type="BW:BWComponentImplementation" xmi:id="_TRCA0T8OEemSJu2nzjApkg" processName="jenkinrest.module.Process"/>
+    <sca:service xmi:id="_2oonkD8OEemSJu2nzjApkg" name="user">
+      <sca:interface.wsdl xmi:id="_2op1sD8OEemSJu2nzjApkg" interface="http://xmlns.example.com/20190305114706PLT#wsdl.interface(user)"/>
+    </sca:service>
+  </sca:component>
+</sca:composite>
